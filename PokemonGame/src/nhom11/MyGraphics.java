@@ -139,8 +139,7 @@ public class MyGraphics extends JPanel implements ActionListener {
 			p2 = null;
 			//System.out.println("done");
 			if (item == 0) {
-				frame.showDialogNewGame(
-						"Bạn đã thắng!\nBẠN có muốn chơi lại?", "Chiến thắng");
+				frame.showDialogNewGame("Bạn đã thắng!\nBẠN có muốn chơi lại?", "Chiến thắng");
 			}
 		}
 	}

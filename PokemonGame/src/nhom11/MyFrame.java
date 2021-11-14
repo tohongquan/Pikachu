@@ -19,16 +19,17 @@ import javax.swing.JProgressBar;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
-public class MyFrame extends JFrame implements ActionListener, Runnable {
+public class MyFrame extends JFrame implements ActionListener {
 	private static final long serialVersionUID = 1L;
 	//private String author = "Nhom 11";
 	private int maxTime = 300;
 	public int time = maxTime;
-	private int row = 10;
-	private int col = 10;
+	private int row = 8;
+	private int col = 8;
 	private int width = 1300;
 	private int height = 600;
-	private JLabel lbScore;
+	private JLabel lbMyScore;
+	private JLabel lbMachineScore;
 	private JProgressBar progressTime;
 	private JButton btnNewGame;
 	private MyGraphics myGraphicsPanel;
@@ -81,20 +82,22 @@ public class MyFrame extends JFrame implements ActionListener, Runnable {
 	}
 
 	private JPanel createControlPanel() {
-		lbScore = new JLabel("0");
+		lbMyScore = new JLabel("0");
+		lbMachineScore = new JLabel("0");
 		// lbTime = new JLabel("0");
-		progressTime = new JProgressBar(0, 100);
-		progressTime.setValue(100);
+//		progressTime = new JProgressBar(0, 100);
+//		progressTime.setValue(100);
 
 		// create panel container score and time
 
 		JPanel panelLeft = new JPanel(new GridLayout(0, 1, 5, 5));
-		panelLeft.add(new JLabel("Score:"));
-		panelLeft.add(new JLabel("Time:"));
+		panelLeft.add(new JLabel("My Score:"));
+		panelLeft.add(new JLabel("Machine Score:"));
 
 		JPanel panelCenter = new JPanel(new GridLayout(0, 1, 5, 5));
-		panelCenter.add(lbScore);
-		panelCenter.add(progressTime);
+		panelCenter.add(lbMyScore);
+		panelCenter.add(lbMachineScore);
+//		panelCenter.add(progressTime);
 
 		JPanel panelScoreAndTime = new JPanel(new BorderLayout(5, 0));
 		panelScoreAndTime.add(panelLeft, BorderLayout.WEST);
@@ -166,33 +169,41 @@ public class MyFrame extends JFrame implements ActionListener, Runnable {
 	// this.lbTime = lbTime;
 	// }
 
-	@Override
-	public void run() {
-		while (true) {
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-			progressTime.setValue((int) ((double) time / maxTime * 100));
-		}
-	}
+//	@Override
+//	public void run() {
+//		while (true) {
+//			try {
+//				Thread.sleep(1000);
+//			} catch (InterruptedException e) {
+//				e.printStackTrace();
+//			}
+//			progressTime.setValue((int) ((double) time / maxTime * 100));
+//		}
+//	}
 
 	public JLabel getLbScore() {
-		return lbScore;
+		return lbMyScore;
 	}
 
 	public void setLbScore(JLabel lbScore) {
-		this.lbScore = lbScore;
+		this.lbMyScore = lbScore;
+	}
+	
+	public JLabel getMachineLbScore() {
+		return lbMachineScore;
 	}
 
-	public JProgressBar getProgressTime() {
-		return progressTime;
+	public void getMachineLbScore(JLabel lbScore) {
+		this.lbMachineScore = lbScore;
 	}
 
-	public void setProgressTime(JProgressBar progressTime) {
-		this.progressTime = progressTime;
-	}
+//	public JProgressBar getProgressTime() {
+//		return progressTime;
+//	}
+//
+//	public void setProgressTime(JProgressBar progressTime) {
+//		this.progressTime = progressTime;
+//	}
 
 	public void setTime(int time) {
 		this.time = time;

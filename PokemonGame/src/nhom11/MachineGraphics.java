@@ -114,16 +114,20 @@ public class MachineGraphics extends JPanel implements Runnable {
 				line = algorithm.checkTwoPoint(p1, p2);
 				if (line != null) {
 					// System.out.println("line != null");
-
+					if (algorithm.getMatrix()[p1.x][p1.y] != 0 || algorithm.getMatrix()[p2.x][p2.y] != 0) {
+						score += 10;
+					}
+					
 					algorithm.getMatrix()[p1.x][p1.y] = 0;
 					algorithm.getMatrix()[p2.x][p2.y] = 0;
 					// algorithm.showMatrix();
 					execute(p1, p2);
 					line = null;
-					// score += 10;
+					
+					
 					// item--;
 					frame.time++;
-					// frame.getLbScore().setText(score + "");
+					frame.getMachineLbScore().setText(score + "");
 				}
 				btn[p1.x][p1.y].setBorder(null);
 				p2 = null;
@@ -159,7 +163,7 @@ public class MachineGraphics extends JPanel implements Runnable {
 				}
 			}
 			if (kt == true) {
-				frame.showDialogNewGame("MÁY đã thắng!\nBạn có muốn chơi lại?", "Chiến thắng");
+				frame.showDialogNewGame("MÁY đã thắng!\nBạn có muốn chơi lại?", "Thua cuộc");
 				break;
 			}
 			run();
