@@ -24,8 +24,8 @@ public class MyFrame extends JFrame implements ActionListener {
 	//private String author = "Nhom 11";
 	private int maxTime = 300;
 	public int time = maxTime;
-	private int row = 8;
-	private int col = 8;
+	private int row = 4;
+	private int col = 4;
 	private int width = 1300;
 	private int height = 600;
 	private JLabel lbMyScore;
@@ -150,7 +150,8 @@ public class MyFrame extends JFrame implements ActionListener {
 		mainPanel.validate();
 		mainPanel.setVisible(true);
 //		this.add(mainPanel);
-//		lbScore.setText("0");
+		lbMyScore.setText("0");
+		lbMachineScore.setText("0");
 	}
 
 	@Override

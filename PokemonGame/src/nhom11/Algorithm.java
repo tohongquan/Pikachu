@@ -19,7 +19,7 @@ public class Algorithm {
 		//System.out.println(row + "," + col);
 		// readFile();
 		createMatrix();
-		showMatrix();
+//		showMatrix();
 		// MyLine line = checkTwoPoint(new Point(10, 4), new Point(9, 6));
 		// if (line != null) {
 		// System.out.println(line.toString());

@@ -30,14 +30,14 @@ public class MachineGraphics extends JPanel implements Runnable {
 	private MyLine line;
 	private MyFrame frame;
 	private Color backGroundColor = Color.lightGray;
-	private int item;
+	//private int item;
 	private boolean kt = false;
 
 	public MachineGraphics(MyFrame frame, int row, int col) {
 		this.frame = frame;
 		this.row = row + 2;
 		this.col = col + 2;
-		item = row * col / 2;
+		//item = row * col / 2;
 
 		setLayout(new GridLayout(row, col, bound, bound));
 		setBackground(backGroundColor);
@@ -146,7 +146,7 @@ public class MachineGraphics extends JPanel implements Runnable {
 					p1 = new Point(i, j);
 					// System.out.println(i + "," + j);
 					try {
-						Thread.sleep(10);
+						Thread.sleep(500);
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
