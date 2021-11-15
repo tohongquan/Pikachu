@@ -131,7 +131,6 @@ public class MyGraphics extends JPanel implements ActionListener {
 				line = null;
 				score += 10;
 				item--;
-				frame.time++;
 				frame.getLbScore().setText(score + "");
 			}
 			btn[p1.x][p1.y].setBorder(null);
@@ -144,5 +143,11 @@ public class MyGraphics extends JPanel implements ActionListener {
 		}
 	}
 	
-	
+	public int getScore() {
+		return score;
+	}
+
+	public void setScore(int score) {
+		this.score = score;
+	}
 }

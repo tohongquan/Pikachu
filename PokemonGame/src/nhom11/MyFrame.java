@@ -24,13 +24,13 @@ public class MyFrame extends JFrame implements ActionListener {
 	//private String author = "Nhom 11";
 	private int maxTime = 300;
 	public int time = maxTime;
-	private int row = 4;
-	private int col = 4;
+	private int row = 10;
+	private int col = 10;
 	private int width = 1300;
 	private int height = 600;
 	private JLabel lbMyScore;
 	private JLabel lbMachineScore;
-	private JProgressBar progressTime;
+	//private JProgressBar progressTime;
 	private JButton btnNewGame;
 	private MyGraphics myGraphicsPanel;
 	private MachineGraphics machineGraphicsPanel;
@@ -38,7 +38,7 @@ public class MyFrame extends JFrame implements ActionListener {
 
 	public MyFrame() {
 		add(mainPanel = createMainPanel());
-		setTitle("Pokemon Game");
+		setTitle("Pikachu Game");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(width, height);
@@ -138,18 +138,13 @@ public class MyFrame extends JFrame implements ActionListener {
 	}
 
 	public void newGame() {
-		//time = maxTime;
-		//myGraphicsPanel.removeAll();
-//		this.remove(mainPanel);
 		mainPanel.removeAll();
-//		this.row = 6;
-//		this.col = 6;
 		mainPanel.add(createLeftPanel());
 		mainPanel.add(createRightPanel());
-//		mainPanel.invalidate();
 		mainPanel.validate();
 		mainPanel.setVisible(true);
-//		this.add(mainPanel);
+		myGraphicsPanel.setScore(0);
+		machineGraphicsPanel.setScore(0);
 		lbMyScore.setText("0");
 		lbMachineScore.setText("0");
 	}
@@ -157,8 +152,8 @@ public class MyFrame extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == btnNewGame) {
-//			newGame();
-			showDialogNewGame("Bạn có muốn chơi game mới", "Thông báo");
+			newGame();
+			//showDialogNewGame("Bạn có muốn chơi game mới", "Thông báo");
 		}
 	}
 
@@ -220,7 +215,7 @@ public class MyFrame extends JFrame implements ActionListener {
 		if (select == 0) {
 			newGame();
 		} else {
-			//System.exit(0);
+			System.exit(0);
 		}
 	}
 }

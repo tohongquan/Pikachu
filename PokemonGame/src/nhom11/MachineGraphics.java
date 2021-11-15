@@ -116,6 +116,7 @@ public class MachineGraphics extends JPanel implements Runnable {
 					// System.out.println("line != null");
 					if (algorithm.getMatrix()[p1.x][p1.y] != 0 || algorithm.getMatrix()[p2.x][p2.y] != 0) {
 						score += 10;
+						frame.getMachineLbScore().setText(score + "");
 					}
 					
 					algorithm.getMatrix()[p1.x][p1.y] = 0;
@@ -126,8 +127,8 @@ public class MachineGraphics extends JPanel implements Runnable {
 					
 					
 					// item--;
-					frame.time++;
-					frame.getMachineLbScore().setText(score + "");
+					//frame.time++;
+					
 				}
 				btn[p1.x][p1.y].setBorder(null);
 				p2 = null;
@@ -168,5 +169,13 @@ public class MachineGraphics extends JPanel implements Runnable {
 			}
 			run();
 		}
+	}
+
+	public int getScore() {
+		return score;
+	}
+
+	public void setScore(int score) {
+		this.score = score;
 	}
 }
